@@ -1,0 +1,22 @@
+public class PatternLayout {
+
+    // Original vulnerable code allowing JNDI lookups
+
+    private String pattern;
+
+ 
+
+    public void setPattern(String pattern) {
+
+        this.pattern = pattern;
+
+    }
+
+ 
+
+    public String format(LogEvent event) {
+
+        return String.format(pattern, event.getMessage());
+
+    }
+}
